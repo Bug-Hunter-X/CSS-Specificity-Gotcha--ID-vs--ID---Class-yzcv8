@@ -1,0 +1,17 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+#my-element {
+  color: blue;
+}
+
+.my-element {
+  color: red;
+}
+
+#my-element.my-element {
+  color: green;
+}
+```
+
+In this scenario, the element with the id "my-element" also has the class "my-element". The expected behavior might be that the most specific selector (`#my-element.my-element`) should override the others, resulting in green text.  However, due to how CSS specificity works, the ID selector (`#my-element`) has higher specificity than the combined ID and class selector, making the text blue instead of green. This is counterintuitive to some developers.
