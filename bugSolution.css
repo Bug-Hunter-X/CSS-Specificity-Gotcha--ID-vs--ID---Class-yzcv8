@@ -1,0 +1,19 @@
+To solve the specificity issue and ensure the "green" style is applied, one option is to use the `!important` flag:
+
+```css
+#my-element {
+  color: blue;
+}
+
+.my-element {
+  color: red;
+}
+
+#my-element.my-element {
+  color: green !important;
+}
+```
+
+Using `!important` should force the green color, but is generally discouraged for maintainability reasons.
+
+A better solution is to refactor your CSS to avoid such conflicts by using more descriptive class names, or improving overall CSS structure and reducing the number of conflicts.
